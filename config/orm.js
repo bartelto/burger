@@ -11,18 +11,19 @@ let orm =  {
             cb(result); // execute callback function
         });
     },
-    insertOne: function(table, cols, vals, cb) {
+    insertOne: function(table, col, val, cb) {
         let queryString = "INSERT INTO ?? (??) VALUES (?);";
-        connection.query(queryString, val, function(err, result){
+        connection.query(queryString, [ table, col, val ], function(err, result){
             if (err) {
                 throw err;
             }
             cb(result); // execute callback function
         });
     },
-    updateOne: function(table, val) {
-        let queryString = "UPDATE ?? SET ??=? WHERE ??=?;";
-        connection.query(queryString, val, function(err, result){
+    updateOne: function(table, col, val, condition, cb) {
+        // condition is a string, such as "id=7"
+        let queryString = `UPDATE ?? SET ??=? WHERE ${condition};`;
+        connection.query(queryString, [ table, col, val ], function(err, result){
             if (err) {
                 throw err;
             }

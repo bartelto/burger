@@ -1,32 +1,40 @@
 <h1>Burger Meister</h1>
 
 /* Burgers waiting to be eaten */
+<h2>Not Eaten</h2>
 
 <ul>
-  {{#each burgers}}
+    {{#each burgers}}
     {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
+    <li>
+        {{id}}.{{name}}
+        <form action="burgers/api/{{id}}?_method=UPDATE" method="POST" class="create-form">
+            <button type="submit">Devour it!</button>
+        </form>
+    </li>
     {{/unless}}
-  {{/each}}
+    {{/each}}
 </ul>
 
 /* Burgers that have been devoured */
-
+<h2>Eaten</h2>
 <ul>
-  {{#each burgers}}
+    {{#each burgers}}
     {{#if devoured}}
-      {{> burger/burger-block devoured=true}}
+    <li>
+        {{id}}.{{name}}
+    </li>
     {{/if}}
-  {{/each}}
+    {{/each}}
 </ul>
 
 <h2>Add a Burger</h2>
 <form class="create-form">
 
-  <div class="form-group">
-    <label for="new-burger">What are you hungry for?</label>
-    <input type="text" id="new -burger" name="name">
-  </div>
+    <div class="form-group">
+        <label for="new-burger">What are you hungry for?</label>
+        <input type="text" id="new -burger" name="name">
+    </div>
 
-  <button type="submit">Add Burger</button>
+    <button type="submit">Add Burger</button>
 </form>
