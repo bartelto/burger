@@ -11,8 +11,7 @@ router.get("/", function(req, res){
 
 router.post("/api/burgers", function(req, res){
     burger.create("burger_name", req.body.name, function(result) {
-        // Send back the ID of the new burger
-        res.json({ id: result.insertId });
+        res.redirect('back'); // reload the page that made the request
     } )
 });
 
