@@ -1,8 +1,12 @@
-express = require('express');
+let express = require('express');
+let methodOverride = require('method-override');
 
 let PORT = process.env.PORT || 8080;
 
 let app = express();
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
