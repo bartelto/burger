@@ -1,6 +1,30 @@
+body {
+    background-color: #FFEDB5;
+}
+
+button {
+    background-color:#40282C;
+    color: #FFEDB5;
+    border: none;
+    font-family: 'Germania One', cursive;
+    font-weight: lighter;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
 .jumbotron {
     background-color: #40282C;
-    background-image: url("/assets/img/beef-blur-bread-2083959.jpg");
+    background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(to right,
+      rgba(64, 40, 44, 1), 
+      rgba(64, 40, 44, 1) calc(100% - 380px), 
+      rgba(64, 40, 44, 0.5) calc(100% - 290px), 
+      rgba(64, 40, 44, 0)
+    ),
+    /* bottom, image */
+    url("/assets/img/beef-blur-bread-2083959.jpg");
+    /*background-image: url("/assets/img/beef-blur-bread-2083959.jpg");*/
     background-size: auto 100%;
     background-position: center right;
     background-repeat: no-repeat;
@@ -14,6 +38,7 @@ h1 {
 }   
 
 h2 {
+    color: #101240;
     font-family: 'Germania One', cursive;
     margin-top: 0;
 }
@@ -31,8 +56,10 @@ ul {
 
 li::before {
     content: attr(data-id);
+    font-family: 'Germania One', cursive;
+    font-size: 20px;
     color: white;
-    font-weight: bolder;
+
     text-align: center;
     line-height: 1.5em;
     text-shadow: 0 0 2px black;
@@ -49,6 +76,7 @@ li::before {
 
 li {
     position: relative;
+    margin-bottom: 5px;
 }
 
 .devour-it {
