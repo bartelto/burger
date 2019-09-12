@@ -62,7 +62,7 @@ li {
     display: inline-block;
     background-image: url("/assets/img/restaurant-plate-pngrepo-com.png");
     background-size: 130px;
-    background-position: center center;
+    background-position: center bottom;
     background-repeat: no-repeat;
     width: 25%;
     height: 130px;
