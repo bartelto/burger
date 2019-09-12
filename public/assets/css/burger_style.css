@@ -1,10 +1,41 @@
+.jumbotron {
+    background-color: #40282C;
+    background-image: url("/assets/img/beef-blur-bread-2083959.jpg");
+    background-size: auto 100%;
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
 h1 {
-    font-size: 100px;
-    color: lime;
+    font-size: 200px;
+    font-family: 'Germania One', cursive;
+    color: #888C07;
+    text-shadow: 0 0 4px black;
 }   
 
+h2 {
+    font-family: 'Germania One', cursive;
+    margin-top: 0;
+}
+
+.lead {
+    color: #F28705;
+    text-shadow: 0 0 2px black;
+}
+
+ul {
+    height: 250px;  
+    overflow: auto;
+    list-style-type: none;
+}
+
 li::before {
-    content: "";
+    content: attr(data-id);
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 1.5em;
+    text-shadow: 0 0 2px black;
     display: inline-block;
     top: 0;
     right: 0;
@@ -13,4 +44,37 @@ li::before {
     background-image: url("/assets/img/hamburger-pngrepo-com.png");
     background-repeat: no-repeat;
     background-size: 30px;
+    background-position: center center;
+}
+
+li {
+    position: relative;
+}
+
+.devour-it {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    height: 100%;
+}
+
+#plate-icon {
+    display: inline-block;
+    background-image: url("/assets/img/restaurant-plate-pngrepo-com.png");
+    background-size: 130px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 25%;
+    height: 130px;
+    margin-right: 20px;
+}
+
+#fill-your-plate {
+    display: inline-block;
+    width: 70%
+    
+}   
+
+#new-burger {
+    width: 100%;
 }

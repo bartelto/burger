@@ -1,7 +1,6 @@
 orm = require("../config/orm.js");
 mysql = require("mysql");
-
-//
+    
 let burger = {
     all: function(cb) {
         orm.selectAll("burgers", cb);

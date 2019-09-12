@@ -1,18 +1,17 @@
-<div class="jumbotron">
-    <h1 class="display-4">Burger Meister</h1>
-    <p class="lead">Now you can have your burger and simulate eating it, too.</p>
-</div>
-
 <div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3">Burger Meister</h1>
+        <p class="lead">Now you can have your burger and simulate eating it, too.</p>
+    </div>
     <div class="row">
         <div class="col">
             <!-- Burgers waiting to be eaten -->
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
-                <li>
-                    {{id}}. {{burger_name}}
-                    <form action="api/burgers/{{id}}?_method=PUT" method="POST" class="create-form">
+                <li data-id="{{id}}">
+                    {{burger_name}}
+                    <form action="api/burgers/{{id}}?_method=PUT" method="POST" class="devour-it">
                         <button type="submit">Devour it!</button>
                     </form>
                 </li>
@@ -25,8 +24,8 @@
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
-                <li>
-                    {{id}}. {{burger_name}}
+                <li data-id="{{id}}">
+                    {{burger_name}}
                 </li>
                 {{/if}}
                 {{/each}}
@@ -35,14 +34,17 @@
     </div>
     <div class="row">
         <div class="col">
-            <h2>Fill Your Plate</h2>
-            <form action="api/burgers" method="POST" class="create-form">
-                <div class="form-group">
-                    <label for="new-burger">What are you hungry for?</label>
-                    <input type="text" id="new-burger" name="name">
-                </div>
-                <button type="submit">Add Burger</button>
-            </form>
+            <div id="plate-icon">
+            </div>
+            <div id="fill-your-plate">
+                <h2>Fill Your Plate</h2>
+                <form action="api/burgers" method="POST" class="create-form">
+                    <div class="form-group">
+                        <input type="text" id="new-burger" name="name" placeholder="What are you hungry for?">
+                    </div>
+                    <button type="submit">Add Burger</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
