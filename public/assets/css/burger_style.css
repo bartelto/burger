@@ -1,8 +1,16 @@
 h1 {
     font-size: 100px;
     color: lime;
-}
+}   
 
-li {
+li::before {
+    content: "";
+    display: inline-block;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;  
     background-image: url("/assets/img/hamburger-pngrepo-com.png");
+    background-repeat: no-repeat;
+    background-size: 30px;
 }
