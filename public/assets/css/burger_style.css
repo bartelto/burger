@@ -20,7 +20,7 @@ button {
       rgba(64, 40, 44, 1), 
       rgba(64, 40, 44, 1) calc(100% - 380px), 
       rgba(64, 40, 44, 0.5) calc(100% - 290px), 
-      rgba(64, 40, 44, 0)
+      rgba(64, 40, 44, 0.5)
     ),
     /* bottom, image */
     url("/assets/img/beef-blur-bread-2083959.jpg");
@@ -89,7 +89,7 @@ li {
 #plate-icon {
     display: inline-block;
     background-image: url("/assets/img/restaurant-plate-pngrepo-com.png");
-    background-size: 130px;
+    background-size: contain;
     background-position: center bottom;
     background-repeat: no-repeat;
     width: 25%;
@@ -99,8 +99,7 @@ li {
 
 #fill-your-plate {
     display: inline-block;
-    width: 70%
-    
+    width: calc(70% - 20px)
 }   
 
 #new-burger {
